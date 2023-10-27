@@ -1,7 +1,14 @@
+import enchant
+from colorama import Fore, init
+
+e = enchant.Dict("en_US")
+
 # Checks if the word is valid i.e a real word and 5 letters long
 def isvalid(word):
     if len(word) == 5:
+        if e.check(word):
             return True
+        return False
     return False
 
 # checks if user has won the game
